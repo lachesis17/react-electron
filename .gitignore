@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+/react-electron-win32-x64
 /.pnp
 .pnp.js
 
