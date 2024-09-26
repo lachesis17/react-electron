@@ -1,0 +1,145 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: 'Roboto';
+  color: white;
+  font-size: small;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; /* column align */
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: bottom;
+  flex-direction: column;
+  font-family: 'Roboto';
+  color: white;
+  font-size: small;
+  height: 100vh;
+}
+
+.cog-wrapper { /* wrappers needed to adjust the hue/color of the svg */
+  animation: colorChange 15s infinite;
+  align-self: flex-start; 
+  margin: 0 auto;
+}
+
+.cog-wrapper2 {
+  animation: colorChange2 15s infinite;
+  align-self: flex-start; 
+  margin: 0 auto;
+}
+
+.cog-wrapper3 {
+  animation: colorChange 15s infinite;
+  align-self: flex-start; 
+  margin: 0 auto;
+}
+
+.cog-wrapper4 {
+  animation: colorChange2 15s infinite;
+  align-self: flex-start; 
+  margin: 0 auto;
+}
+
+.cog-wrapper:hover .cog1-content,
+.cog-wrapper2:hover .cog2-content,
+.cog-wrapper3:hover .cog3-content,
+.cog-wrapper4:hover .cog4-content {
+  filter: url('#turbulenceFilter');
+}
+
+.cog1-content img, .cog2-content img, .cog3-content img, .cog4-content img {
+  width: 100%;
+  height: 100%;
+}
+
+.cog1,
+.cog2,
+.cog3 {
+  height: 40vmin;
+  pointer-events: none;
+  margin: -5vmin;
+}
+
+.cog1 {
+  height: 30vmin;
+  pointer-events: none;
+  margin-top: -0.5vmin;
+  margin-right: -7.0vmin;
+  align-self: flex-start; 
+  animation: cog1-spin-rev infinite 0.9s linear;
+}
+
+.cog2 
+{
+  margin-top: 2.0vmin;
+  animation: cog1-spin infinite 1.5s linear;
+}
+
+.cog3
+{
+  margin-top: 12.0vmin;
+  animation: cog1-spin-rev infinite 2.75s linear;
+}
+
+.cog4 {
+  height: 20vmin;
+  pointer-events: none;
+  margin-top: 35vmin;
+  margin-left: -2.0vmin;
+  animation: cog1-spin infinite 1.25s linear;
+}
+
+@keyframes cog1-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cog1-spin-rev {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(200deg) saturate(0%) brightness(250%);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes colorChange2 {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(200deg) saturate(0%) brightness(90%); 
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
